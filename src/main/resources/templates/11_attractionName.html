@@ -1,0 +1,29 @@
+<!--Grevendonk Tim r0831309-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css">
+    <title>11_attractionName</title>
+</head>
+<body class="container">
+<!--attraction name-->
+<h5 th:text="'the attraction found:' + ${attraction.getName()}"></h5>
+<ol>
+<!--    give the attraction found its info -->
+    <li class="bg-secondary mr-5 mb-2 border bord border-dark">
+        <ul class="mb-4">
+<!--            person responsible first name and surname-->
+            <li th:text="'responsible: ' + ${attraction.getResponsible().getFirstName() + ' ' + attraction.getResponsible().getSurName()}"></li>
+<!--            duration of the attraction           -->
+            <li th:text="'Duration: ' + ${attraction.getDuration()}"></li>
+<!--        attraction photo (standard "no image" if blank/not found)-->
+            <img th:onerror="this.src='/img/noimage.jpg'" th:src="@{${attraction.getPhoto()}}" alt="themePark ride" class="col-8 offset-2">
+        </ul>
+    </li>
+</ol>
+<p class="mb-0"><a href="/" class="p-1 bg-info text-dark row">back to main page</a></p>
+</body>
+</html>

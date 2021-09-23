@@ -1,0 +1,48 @@
+<!--Grevendonk Tim r0831309-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css">
+    <title>1_newVisitor</title>
+</head>
+<h2 class="text-center">enter visitor credentials:</h2>
+<body class="container">
+<form action="/2_welcome" class="mt-5">
+    <div class="form-group row">
+        <label for="firstName" class="col-md-3 col-form-label">visitor name:</label>
+        <div class="col-md-9">
+            <input type="text" name="firstName" id="firstName" autofocus required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="surName" class="col-md-3 col-form-label">surname visitor:</label>
+        <div class="col-md-9">
+            <input type="text" name="surName" id="surName" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="birthYear" class="col-md-3 col-form-label">birthyear visitor:</label>
+        <div class="col-md-9">
+            <input type="number" name="birthYear" id="birthYear" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-md-3 pl-3">
+            <p th:each="themePark : ${themeParks}">
+                <label th:for="${themeParkStat.index}" th:text="${themePark.getName()}"></label>
+                <input type="radio" name="themePark" th:checked="${themeParkStat.index} == 0"
+                       th:value="${themeParkStat.index}" th:id="${themeParkStat.index}">
+            </p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <input type="submit" name="submit" value="submit visitor"
+               class="bg-success rounded border-light offset-2 col-8">
+    </div>
+</form>
+<p class="mb-0"><a href="/" class="p-1 bg-info text-dark row">back to main page</a></p>
+</body>
+</html>

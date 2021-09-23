@@ -1,0 +1,48 @@
+<!--Grevendonk Tim r0831309-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css">
+    <title>Theme Park project</title>
+</head>
+<body class="container">
+<h1 class="text-center m-3">Theme park exrecise</h1>
+<h2 class="text-center">Grevendonk Tim</h2>
+<p class="border-bottom border-dark">choose your action:</p>
+<ul class="col-10 offset-1 navigateButtons">
+    <li class="m-1"><a href="/1_newVisitor" class="p-1 bg-info text-dark rounded row border border-secondary">new
+        visitor</a></li>
+    <li class="m-1"><a href="/3_newStaff" class="p-1 bg-info text-dark rounded row border border-secondary">new staff
+        member</a></li>
+    <li class="m-1"><a href="/7_newPark" class="p-1 bg-info text-dark rounded row border border-secondary">new park</a>
+    </li>
+    <li class="m-1"><a href="/9_newAttraction" class="p-1 bg-info text-dark rounded row border border-secondary">new
+        attraction</a>
+    </li>
+</ul>
+<ul class="col-10 offset-1 navigateButtons">
+    <li class="m-1">
+        <form action="/11_attractionName">
+            <div class="form-group bg-warning text-dark rounded row border border-secondary p-1">
+                <label for="attraction" class="col-md-3 col-form-label">search by attraction</label>
+                <input class="col-md-6 col-9" type="text" name="attraction" id="attraction"  autofocus>
+                <input class="col-md-3 col-3 bg-warning rounded" type="submit" name="submit" value="search">
+            </div>
+        </form>
+    </li>
+</ul>
+<ul class="col-10 offset-1 navigateButtons">
+    <li class="m-1"><a href="/6_allVisitors" class="p-1 bg-secondary text-dark rounded row border border-secondary">all
+        vistors</a></li>
+    <li class="m-1"><a href="/5_staffMembers" class="p-1 bg-secondary text-dark rounded row border border-secondary">all
+        staff members</a></li>
+    <li class="m-1"><a href="/8_allThemeParks" class="p-1 bg-secondary text-dark rounded row border border-secondary">all
+        theme
+        parks</a></li>
+</ul>
+<p class="mb-0"><a href="/error" class="p-1 bg-info text-secondary row">error</a></p>
+</body>
+</html>

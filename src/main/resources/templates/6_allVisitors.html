@@ -1,0 +1,37 @@
+<!--Grevendonk Tim r0831309-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css">
+    <title>6_allVisitors</title>
+</head>
+<body class="container">
+
+<h2>all visitors:</h2>
+
+<ol>
+<!--    for each visitor...-->
+    <li th:each="visitor : ${visitorList}">
+<!--        give the name-->
+        <span th:text="${visitor.getSurName() + ' ' + visitor.getFirstName()}"></span>
+        <ul>
+<!--            the year of birth-->
+            <li th:text="${'Year of birth: ' + visitor.getYearOfBirth()}"></li>
+<!--            and their park code-->
+            <li th:text="${'Park code: ' + visitor.getThemeParkCode()}"></li>
+            <li>wish list:
+            <ol>
+<!--                all items ont their wishlist-->
+                <li th:each="wish : ${visitor.getWishList()}" th:text="${wish}"></li>
+            </ol>
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<p class="mb-0"><a href="/" class="p-1 bg-info text-dark row">back to main page</a></p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!--Grevendonk Tim r0831309-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css">
+    <title>3_newStaff</title>
+</head>
+<body class="container">
+<h2 class="text-center">enter staff credentials:</h2>
+<!--form block for adding new staff-->
+<!--<form action="/4_staffDetails" class="mt-5">-->
+
+<!--mapping for exam (to 0_exam instead of 4_staffdetails)-->
+<form action="/0_exam" class="mt-5">
+<!--    staff first name-->
+    <div class="form-group row">
+        <label for="firstName" class="col-md-3 col-form-label">first name</label>
+        <div class="col-md-9">
+            <input type="text" name="firstName" id="firstName" autofocus required>
+        </div>
+    </div>
+<!--    staff surname-->
+    <div class="form-group row">
+        <label for="surName" class="col-md-3 col-form-label">surname</label>
+        <div class="col-md-9">
+            <input type="text" name="surName" id="surName" required>
+        </div>
+    </div>
+<!--    since when the staff is employed, in dateformat-->
+    <div class="form-group row">
+        <label for="employedSince" class="col-md-3 col-form-label">employed since</label>
+        <div class="col-md-9">
+            <input type="date" name="employedSince" id="employedSince" required>
+        </div>
+    </div>
+<!--    checkbox if the staffmember is a student or not -->
+    <div class="form-group row">
+        <label for="student" class="col-md-3 col-form-label">is a student</label>
+        <div class="col-md-9">
+            <input type="checkbox" name="student" id="student">
+        </div>
+    </div>
+<!--    themepark where staff is deployed-->
+    <div class="form-group row ml-2">
+        <select name="themePark" class="offset-md-3">
+            <option value="-1">employed at which themepark?</option>
+            <option th:each="park : ${themeParkList}" th:text="${park.getName()}" th:value="${parkStat.index}"></option>
+        </select>
+    </div>
+<!--    the form submit button-->
+    <div class="form-group row">
+        <input type="submit" name="submit" value="submit staff member themePark" class="bg-success rounded border-light offset-2 col-8">
+    </div>
+</form>
+<p class="mb-0"><a href="/" class="p-1 bg-info text-dark row">back to main page</a></p>
+</body>
+</html>

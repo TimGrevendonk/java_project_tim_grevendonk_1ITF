@@ -1,0 +1,59 @@
+<!--Grevendonk Tim r0831309-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css">
+    <title>9_newAttraction</title>
+</head>
+<body class="container">
+<h2 class="text-center">enter new attraction:</h2>
+<!--form block to add new attraction-->
+<form action="/10_allAttractions" class="mt-5">
+<!--    name of attraction (required)-->
+    <div class="form-group row">
+        <label for="name" class="col-md-3 col-form-label">attraction name:</label>
+        <div class="col-md-9">
+            <input type="text" name="name" id="name" autofocus required>
+        </div>
+    </div>
+<!--    attraction duration (reaquired)-->
+    <div class="form-group row">
+        <label for="duration" class="col-md-3 col-form-label">duration</label>
+        <div class="col-md-9">
+            <input type="number" name="duration" id="duration" placeholder="-seconds-" required>
+        </div>
+    </div>
+<!--    attraction photo (required)-->
+    <div class="form-group row">
+        <label for="photo" class="col-md-3 col-form-label">photo</label>
+        <div class="col-md-9">
+            <input type="text" name="photo" id="photo" placeholder="-photo.jpg-" required>
+        </div>
+    </div>
+<!--    attraction for which theme park (select list)-->
+    <div class="form-group row ml-2">
+        <select name="park"  class="offset-md-3">
+            <option value="-1">choose a themepark</option>
+            <option th:each="park : ${themeParkList}" th:text="${park.getName()}" th:value="${parkStat.index}"></option>
+        </select>
+    </div>
+<!--    attraction responsibe staff (select list)-->
+    <div class="form-group row ml-2">
+        <select name="staff" class="offset-md-3">
+            <option value="-1">choose a staff member responsible</option>
+            <option th:each="member : ${staffMemberList}" th:text="${member.getFirstName()} + ' ' + ${member.getSurName}" th:value="${memberStat.index}"></option>
+        </select>
+    </div>
+<!--    submit button for new attraction-->
+    <div class="form-group row">
+        <input type="submit" name="submit" value="submit attraction"
+               class="bg-success rounded border-light offset-2 col-8">
+    </div>
+</form>
+
+<p class="mb-0"><a href="/" class="p-1 bg-info text-dark row">back to main page</a></p>
+</body>
+</html>

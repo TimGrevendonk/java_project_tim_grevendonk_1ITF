@@ -1,0 +1,32 @@
+<!--Grevendonk Tim r0831309-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css">
+    <title>7_newPark</title>
+</head>
+<body>
+<body class="container">
+<h2 class="text-center">enter new theme park:</h2>
+<!--form block of adding new theme park-->
+<form action="/8_allThemeParks" class="mt-5">
+<!--    theme park name-->
+    <div class="form-group row">
+        <label for="themePark" class="col-md-3 col-form-label">themepark name:</label>
+        <div class="col-md-9">
+            <input type="text" name="themePark" id="themePark" autofocus required>
+        </div>
+    </div>
+<!--    submit the new theme park-->
+    <div class="form-group row">
+        <input type="submit" name="submit" value="submit themePark"
+               class="bg-success rounded border-light offset-2 col-8">
+    </div>
+</form>
+
+<p class="mb-0"><a href="/" class="p-1 bg-info text-dark row">back to main page</a></p>
+</body>
+</html>

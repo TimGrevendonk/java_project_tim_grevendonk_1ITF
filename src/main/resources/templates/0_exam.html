@@ -1,0 +1,19 @@
+<!--Grevendonk Tim r0831309-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css">
+    <title>0_exam</title>
+</head>
+<body class="container">
+<!--submitted staff to string like: "Staff member "name+surname" (working student) is employed since "date"-->
+<h2>New staff member</h2>
+<p th:text="${staff.getFirstName() + ' ' + staff.getSurName()}"></p>
+<p th:text="'employed at ' + ${staff.getEmployedAt().getName()}"></p>
+
+<p class="mb-0"><a href="/" class="p-1 bg-info text-dark row">back to main page</a></p>
+</body>
+</html>
